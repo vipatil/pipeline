@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     parameters {
         string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
@@ -12,7 +12,11 @@ pipeline {
         }
         stage('Test') {
             steps {
+                steps {
                 echo 'Testing..'
+
+                sh 'node --version'
+                sh 'svn --version'
             }
         }
         stage('Deploy') {
