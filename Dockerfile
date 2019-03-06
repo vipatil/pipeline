@@ -1,2 +1,2 @@
-FROM node:7-alpine
-RUN apk add -U subversion
+FROM maven:3.6.0-jdk-8 
+

@@ -14,8 +14,8 @@ pipeline {
             steps {
                 echo 'Testing..'
 
-                sh 'node --version'
-                sh 'svn --version'
+                sh 'mvn -v'
+                sh 'java -version'
             }
         }
         stage('Deploy') {
